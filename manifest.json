@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Similar Codeforces Problem",
+  "version": "1.0",
+  "description": "An extension to filter and display similar Codeforces problems based on rating, tags and solved count.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://codeforces.com/problemset/problem/*",
+        "https://codeforces.com/contest/*/problem/*",
+        "https://codeforces.com/gym/*/problem/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
+
